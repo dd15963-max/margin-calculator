@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="구매가와 판매가로 마진율을 바로 계산하세요." />
+    <title>마진율 계산기</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <header>
+        <h1>마진율 계산기</h1>
+        <p>구매가와 판매가를 입력하면 바로 계산됩니다.</p>
+      </header>
+
+      <form id="margin-form" novalidate>
+        <label for="purchase-price">구매가</label>
+        <div class="input-wrap">
+          <input id="purchase-price" type="text" inputmode="numeric" autocomplete="off" placeholder="0" aria-describedby="error-message" />
+          <span>원</span>
+        </div>
+
+        <label for="sale-price">판매가</label>
+        <div class="input-wrap">
+          <input id="sale-price" type="text" inputmode="numeric" autocomplete="off" placeholder="0" aria-describedby="error-message" />
+          <span>원</span>
+        </div>
+      </form>
+
+      <p id="error-message" class="error" role="alert" aria-live="polite"></p>
+
+      <section class="result" aria-live="polite">
+        <span>마진율</span>
+        <strong id="margin-rate">0%</strong>
+        <div class="profit-row">
+          <span>마진 금액</span>
+          <b id="profit-amount">0원</b>
+        </div>
+      </section>
+
+      <p class="formula">마진율 = (판매가 − 구매가) ÷ 판매가 × 100</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
